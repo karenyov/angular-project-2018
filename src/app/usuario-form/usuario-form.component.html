@@ -1,0 +1,17 @@
+<form #frm="ngForm" (ngSubmit)="adicionar(frm)">
+    <div class="ui-g">
+        <div class="ui-g-12">
+          <h1>Gerenciar Usuário</h1>
+        </div>
+
+        <div class="ui-g-12 ui-fluid">
+          <label>Nome</label>
+          <input pInputText name="nome" ngModel [required]="true">
+        </div>
+  
+        <div class="ui-g-12">
+            <button pButton type="submit" label="Adicionar" [disabled]="frm.invalid"></button>
+          </div>
+    </div>
+  
+  </form>
