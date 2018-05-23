@@ -8,8 +8,8 @@ export class UsuarioService {
 
   usuariosUrl = 'http://localhost:8080/usuarios'; //URL PARA REQUISIÇÃO BACKEND
   usuarios = [
-    { id: 2, nome: "Maria" },
-    { id: 3, nome: "José" }
+    { id: 1, nome: "Maria" },
+    { id: 2, nome: "José" }
   ];
 
   constructor(private http: HttpClient) { }
@@ -21,6 +21,10 @@ export class UsuarioService {
 
   adicionar(usuario: any) {
     //return this.http.post(this.usuariosUrl, item);
-    this.usuarios.push(usuario);
+    let novoUsuario = {
+      id: this.usuarios.length + 1,
+      nome: usuario.nome
+    };
+    this.usuarios.push(novoUsuario);
   }
 }
