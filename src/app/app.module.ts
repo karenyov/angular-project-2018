@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { DataTableModule,ButtonModule , InputTextModule } from 'primeng/primeng';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { MeuComponente2Component } from './meu-componente2/meu-componente2.component';
@@ -22,10 +22,8 @@ import { UsuarioFormComponent } from './usuario-form/usuario-form.component';
   imports: [
     BrowserModule,
     FormsModule,
-    ButtonModule,
-    InputTextModule,
-    DataTableModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgbModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
