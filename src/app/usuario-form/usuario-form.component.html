@@ -6,6 +6,7 @@
           <h3>
             Gerenciar Usuários
           </h3>
+          <hr>
         </div>
         <div class="col-md-12">
           <form #form="ngForm" (ngSubmit)="adicionar(form)">
@@ -21,4 +22,39 @@
       </div>
     </div>
   </div>
+
+  <div class="row" style="margin-top: 40px;">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-8">
+          <h3>
+            Usuários Cadastrados
+          </h3>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>
+                  #
+                </th>
+                <th>
+                  Nome
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let usuario of usuarios;">
+                <td>
+                  {{ usuario.id }}
+                </td>
+                <td>
+                  {{ usuario.nome }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>

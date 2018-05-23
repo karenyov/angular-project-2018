@@ -9,6 +9,9 @@ import { AppComponent } from './app.component';
 import { MeuComponente2Component } from './meu-componente2/meu-componente2.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UsuarioFormComponent } from './usuario-form/usuario-form.component';
+
+import { HttpClientModule } from '@angular/common/http';
+import { UsuarioService } from './services/usuario.service';
 //import { MeuComponenteComponent } from './meu-componente/meu-componente.component';
 
 @NgModule({
@@ -17,15 +20,16 @@ import { UsuarioFormComponent } from './usuario-form/usuario-form.component';
     MeuComponente2Component,
     NavbarComponent,
     UsuarioFormComponent
-	//MeuComponenteComponent
+    //MeuComponenteComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     NgbModule.forRoot()
   ],
-  providers: [],
+  providers: [UsuarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
+import { UsuarioService } from '../services/usuario.service';
+
 @Component({
   selector: 'app-usuario-form',
   templateUrl: './usuario-form.component.html',
@@ -10,23 +12,19 @@ export class UsuarioFormComponent implements OnInit {
 
   usuarios = [];
 
-  constructor() { }
+  constructor(private usuarioService : UsuarioService) { }
 
   ngOnInit() {
     this.consultar();
   }
 
   consultar() {
-    let dados = [
-      {id: 2, nome: "Maria"}, 
-      {id: 3, nome: "José"}
-    ];
-    this.usuarios = dados;
+    this.usuarios = this.usuarioService.listar();
   }
 
   adicionar(frm: FormControl) {    
-    this.usuarios.push(frm.value);
-    console.log(this.usuarios);
+    this.usuarioService.adicionar(frm.value);
+    this.consultar();
   }
 
 }
