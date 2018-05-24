@@ -39,6 +39,9 @@
                 <th>
                   Nome
                 </th>
+                <th>
+                  Ações
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -48,6 +51,11 @@
                 </td>
                 <td>
                   {{ usuario.nome }}
+                </td>
+                <td>
+                  <button type="button" class="btn btn-danger" (click)="deletar(usuario.id);">
+                    Excluir
+                  </button>
                 </td>
               </tr>
             </tbody>

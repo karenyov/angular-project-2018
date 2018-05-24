@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UsuarioService {
 
-  usuariosUrl = 'http://localhost:8080/usuarios'; //URL PARA REQUISIÇÃO BACKEND
+  //usuariosUrl = 'http://localhost:8080/usuarios'; //URL PARA REQUISIÇÃO BACKEND
   usuarios = [
     { id: 1, nome: "Maria" },
     { id: 2, nome: "José" }
@@ -26,5 +26,15 @@ export class UsuarioService {
       nome: usuario.nome
     };
     this.usuarios.push(novoUsuario);
+  }
+
+  deletar(id: any) {
+    let array_aux = [];
+
+    for (var i = 0; i < this.usuarios.length; i++) {
+      if (this.usuarios[i].id != id)
+        array_aux.push(this.usuarios[i]);
+    }
+    this.usuarios = array_aux;
   }
 }
